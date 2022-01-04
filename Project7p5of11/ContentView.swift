@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    @AppStorage("tapCount") private var tapCount = 0
+    
+//    @State private var tapCount = UserDefaults.standard.integer(forKey: "Tap")
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        Button("Tap count: \(tapCount)") {
+            tapCount += 1
+//            UserDefaults.standard.set(self.tapCount, forKey: "Tap")
+        }
     }
 }
 
